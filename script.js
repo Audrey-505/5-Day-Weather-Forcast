@@ -97,7 +97,7 @@ function getCoords(city) {
     })
  }
    
-//this is my test
+//this is my test test
 //var queryURL = `api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${APIKey}`
 //console.log(queryURL)
 
