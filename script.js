@@ -1,3 +1,5 @@
+var currentWDisplay = document.getElementById('currentDisplay')
+
 var APIKey = 'd8b4e9c1ebd7b4bfdc1c3e9a6c0207cf'
 // var city 
 
@@ -29,11 +31,35 @@ function getCoords(city) {
     })
     .then(function (data){
     console.log(data)
+    currentWeather(data)
     })
  }
 
-   
- 
+function currentWeather(data){
+$(currentWDisplay).append(`
+<h2>Current Weather</h2>
+<h3>City: ${data.city.name} Date: ${data.list[0].dt}</h3>
+<table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">icon</th>
+                    <th scope="row">temp</th>
+                    <th scope="row">wind</th>
+                    <th scope="row">humidity</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">${data.list[0].weather[0].icon}</th>
+                    <th scope="row">${data.list[0].main.feels_like}</th>
+                    <th scope="row">${data.list[0].wind.speed}</th>
+                    <th scope="row">${data.list[0].main.humidity}</th>
+                </tr>
+            </tbody>
+        </table>
+`)   
+}
+
 //this is my test test
 //var queryURL = `api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${APIKey}`
 //console.log(queryURL)
