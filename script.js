@@ -65,47 +65,6 @@ citySelected();
 
 //var city
 
-// function citySelected(){
-//     city = document.getElementById('cities1').value
-//     console.log(city)
-//     //return city
-//     var cityURL = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKey}`
-//     //console.log(cityURL)
-//     fetch(cityURL)
-//     .then(function (response){
-//         return response.json()
-//     })
-//     .then(function (response){
-//         console.log(response.coord)
-//         var lat = response.coord.lat  // this code grabs the coordinates of the city to use in the 5 day forcast api url 
-//         //console.log(lat)
-//         var lon = response.coord.lon
-//         //console.log(lon)
-//         //return (lat, lon)
-//         var queryURL = `api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${APIKey}`
-//         //console.log(queryURL)
-//         fetch(queryURL, {
-//             mode: 'cors'
-//         })
-//         .then(function (data){
-//         console.log(data.json())
-//         })
-//         // .then(function (data){
-//         //     console.log(data)
-//         // })
-//     })
-// }
-
-
-// 1. Lets first divide your api calls into seperate functions. Lets create a function that is going to fetch the coordinates to be used later :slightly_smiling_face: Something like this: function fetchCoords() {}.
-// 2. Inside the fetchCoords function we are going to first create the apiURL that will be called: var apiUrl = https://api.openweathermap.org/geo/1.0/direct?q=${search}&limit=5&appid=${APIKey};
-// 3. Now you can perform your fetch with the apiUrl.
-// 4. Now lets create the other function that will take the coords from the above function and actually search the weather forecast: function fetchWeather(location) {}. (Make sure to add the location call back, we will use it later)
-// 5. Inside the fetchWeather function we are going to next create a couple variables, the first one being the lat: var { lat } = location;
-// 6. Now the same for the lon: var { lon } = location;
-// 7. Next variable we will create will be the city: var city = location.name;
-// 8. Now we can create the variable for the api call: var apiUrl = https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=imperial&appid=${APIKey};
-// 9. Now perform your fetch :slightly_smiling_face:
 
 function getCoords(city) {
     city = document.getElementById('cities1').value
@@ -137,16 +96,4 @@ function getCoords(city) {
     console.log(data)
     })
  }
-
-
-
-
-//my attempt to pull the returned lat and lon values
-// var {lat, lon} = getCoords()
-
-// // var coords = getCoords()
-// // var lati = coords.lat
-// // var long = coords.lon
-
-
    
