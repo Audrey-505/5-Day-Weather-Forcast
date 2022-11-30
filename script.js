@@ -64,7 +64,7 @@ function citySelectedOld() {
 citySelected();
 
 //var city
-
+// test
 
 function getCoords(city) {
     city = document.getElementById('cities1').value
