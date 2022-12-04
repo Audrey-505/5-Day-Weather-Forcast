@@ -4,6 +4,11 @@ var futureWeatherD = document.getElementById('five-dayDisplay')
 var APIKey = 'd8b4e9c1ebd7b4bfdc1c3e9a6c0207cf'
 // var city 
 
+// var date = $('#datetest')
+// var todayDate = moment.unix(1670176800).format("dddd, MMMM Do YYYY")
+// $(date).append(`<h1>${todayDate}</h1>`)
+// console.log(todayDate)
+
 function clearAll (){
     $('#currentDisplay').empty()
     $('#five-dayDisplay').empty()
@@ -41,11 +46,13 @@ function getCoords(city) {
     futureWeather(data)
     })
  }
+
+
 var iconURL = `https://openweathermap.org/img/wn/`
 function currentWeather(data){
 $(currentWDisplay).append(`
 <h2>Current Weather</h2>
-<h3>City: ${data.city.name} Date: ${data.list[0].dt}</h3>
+<h3>City: ${data.city.name} Date: ${moment.unix(`${data.list[0].dt}`).format("dddd, MMMM Do YYYY")} </h3>
 <table class="table">
             <thead>
                 <tr>
@@ -75,11 +82,11 @@ $(futureWeatherD).append(`
   <thead>
     <tr>
       <th scope="col">Date</th>
-      <th scope="col">${data.list[0].dt}</th>
-      <th scope="col">${data.list[8].dt}</th>
-      <th scope="col">${data.list[16].dt}</th>
-      <th scope="col">${data.list[24].dt}</th>
-      <th scope="col">${data.list[32].dt}</th>
+      <th scope="col">${moment.unix(`${data.list[0].dt}`).format("dddd, MMMM Do YYYY")}</th>
+      <th scope="col">${moment.unix(`${data.list[8].dt}`).format("dddd, MMMM Do YYYY")}</th>
+      <th scope="col">${moment.unix(`${data.list[16].dt}`).format("dddd, MMMM Do YYYY")}</th>
+      <th scope="col">${moment.unix(`${data.list[24].dt}`).format("dddd, MMMM Do YYYY")}</th>
+      <th scope="col">${moment.unix(`${data.list[32].dt}`).format("dddd, MMMM Do YYYY")}</th>
     </tr>
   </thead>
   <tbody>
