@@ -11,16 +11,20 @@
   <body>
     <h1>5-Day-Weather-Forcast</h1>
 
+    <!-- <select class="form-control" id="cities1" onchange="getCoords()"> LINE 18 -->
+
     <div class="form-group">
         <label for="cities">Cities</label>
-        <select class="form-control" id="cities1" onchange="getCoords()">
+        <select class="form-control" id="cities1" onchange="clearAll()">
+          <option selected="selected">Select A City</option>  
           <option>Atlanta</option>
           <option>Chicago</option>
           <option>Nashville</option>
-          <option selected="selected">Boston</option>
+          <option>Boston</option>
           <option>San-Antonio</option>
         </select>
       </div>
+      <button id="goWeather" onclick="getCoords()">Get Weather</button>
     <div id="currentDisplay">
         <!-- <table class="table">
             <thead>
@@ -42,7 +46,7 @@
         </table> -->
     </div>
     <div id="five-dayDisplay">
-        
+
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>

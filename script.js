@@ -4,6 +4,11 @@ var futureWeatherD = document.getElementById('five-dayDisplay')
 var APIKey = 'd8b4e9c1ebd7b4bfdc1c3e9a6c0207cf'
 // var city 
 
+function clearAll (){
+    $('#currentDisplay').empty()
+    $('#five-dayDisplay').empty()
+}
+
 function getCoords(city) {
     city = document.getElementById('cities1').value
     var cityURL = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKey}`
