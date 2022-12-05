@@ -145,17 +145,38 @@ $(futureWeatherD).append(`
 </tbody>
 </table>
 `)
+testingStore()
 }
 
-function testingStore (){
-$('#cities1').on('change', function (){
+function testingStore(){
+    $('#cities1').on('click', function(){
     var city = $(this).val()
-    var valueC = $('#currentDisplay')
-    //console.log(city)
-    console.log(valueC.html())
-    //localStorage.setItem(city, valueC.innerHTML)
-})
+    console.log(city)
+    $('#cityData').on('click', function(){
+        var valueC = $('#currentDisplay')
+        console.log(valueC.html())
+        localStorage.setItem(city, valueC.html())
+    })
+    })
 }
+
+// function testingStore (){
+//     $('#cities1').on('click', function(){
+//     var city = $(this).val()
+//     console.log(city)
+// })
+// $('#cityData').on('click', function (){
+//     //var city = $(this).val()
+//     var valueC = $('#currentDisplay')
+//     //console.log(city)
+//     console.log(valueC.html())
+// $('#cities1').on('click', function(){
+//     var city = $(this).val()
+//     console.log(city)
+// })
+//     //localStorage.setItem(city, valueC.html())
+// })
+// }
 
 // $('#cityHistory').append(getCityData())
 
