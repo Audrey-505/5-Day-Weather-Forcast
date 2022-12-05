@@ -18,6 +18,7 @@
 
     <div class="form-group">
         <label for="cities">Cities</label>
+        <!-- <select class="form-control" id="cities1" onchange="clearAll()"> -->
         <select class="form-control" id="cities1" onchange="clearAll()">
           <option selected="selected">Select A City</option>  
           <option>Atlanta</option>
@@ -28,12 +29,12 @@
           <option>New York</option>
         </select>
       </div>
-      <button id="goWeather" onclick="getCoords()">Get Weather</button>
+      <button id="goWeather" onclick="resetBtn()">Get Weather</button>
       
       <div id="cityHistory">
 
       </div>
-      
+
     <div id="currentDisplay">
         <!-- <table class="table">
             <thead>

@@ -1,3 +1,5 @@
+
+
 var currentWDisplay = document.getElementById('currentDisplay')
 var futureWeatherD = document.getElementById('five-dayDisplay')
 
@@ -9,9 +11,27 @@ var APIKey = 'd8b4e9c1ebd7b4bfdc1c3e9a6c0207cf'
 // $(date).append(`<h1>${todayDate}</h1>`)
 // console.log(todayDate)
 
+
+// function getCityData(){
+// $('#cities').each(function(){
+//     $(this).val(localStorage.getItem($('#currentDisplay')))
+// })
+// }
+
+function resetBtn(){
+    if ($('#currentDisplay').children().length === 0){
+        getCoords()
+        $('#goWeather').addClass('btnAway')
+    } else {
+        $('#goWeather').addClass('btnCome')
+    }
+}
+
 function clearAll (){
+    getCoords()
     $('#currentDisplay').empty()
     $('#five-dayDisplay').empty()
+    $('#goWeather').addClass('btnAway')
 }
 
 function getCoords(city) {
@@ -126,6 +146,25 @@ $(futureWeatherD).append(`
 </table>
 `)
 }
+
+function testingStore (){
+$('#cities1').on('change', function (){
+    var city = $(this).val()
+    var valueC = $('#currentDisplay')
+    //console.log(city)
+    console.log(valueC.html())
+    //localStorage.setItem(city, valueC.innerHTML)
+})
+}
+
+// $('#cityHistory').append(getCityData())
+
+// function getCityData(){
+// $('#cities').each(function(){
+//     $(this).val(localStorage.getItem($('#currentDisplay')))
+// })
+// }
+
 
 //this is my test test
 //var queryURL = `api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${APIKey}`
