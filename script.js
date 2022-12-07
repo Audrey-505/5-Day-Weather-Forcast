@@ -5,7 +5,7 @@ var futureWeatherD = document.getElementById('five-dayDisplay')
 
 var APIKey = 'd8b4e9c1ebd7b4bfdc1c3e9a6c0207cf'
 // var city 
-
+var city;
 // var date = $('#datetest')
 // var todayDate = moment.unix(1670176800).format("dddd, MMMM Do YYYY")
 // $(date).append(`<h1>${todayDate}</h1>`)
@@ -150,38 +150,45 @@ testingStore()
 
 function testingStore(){
     $('#cities1').on('click', function(){
-    var city = $(this).val()
+    city = $(this).val()
     console.log(city)
     $('#cityData').on('click', function(){
         var valueC = $('#currentDisplay')
-        console.log(valueC.html())
+        //console.log(valueC.html())
         localStorage.setItem(city, valueC.html())
+        //getCityData() //This keeps the same city as the key each time
+        getCityData()        
     })
     })
 }
 
-// function testingStore (){
-//     $('#cities1').on('click', function(){
-//     var city = $(this).val()
-//     console.log(city)
-// })
-// $('#cityData').on('click', function (){
-//     //var city = $(this).val()
-//     var valueC = $('#currentDisplay')
-//     //console.log(city)
-//     console.log(valueC.html())
-// $('#cities1').on('click', function(){
-//     var city = $(this).val()
-//     console.log(city)
-// })
-//     //localStorage.setItem(city, valueC.html())
-// })
+// $('#cityHistory').append(getCityData())
+// function cityInformation(){
+//     localStorage.getItem(city)
 // }
 
-// $('#cityHistory').append(getCityData())
+
+function getCityData(){
+    //$('#cityHistory').html(`<h3>Reccent Searches:</h3><br><h4><a href="saved-city.html">${city}</a></h4><br>`)
+    //localStorage.getItem(city)
+    //$('#cityHistory').html('<h1>HELLO WORLD<h1>')
+    //$('#cityHistory').append(getCityData(city))
+    //$('#cityHistory').html() = localStorage.getItem(city)
+    //$('#cityHistory').html(localStorage.getItem(city)) CORRECT SYNTAX BUT NOT WORKING
+    //console.log(localStorage.getItem(city))
+    //$('#cityHistory').html(cityInformation)
+
+    // UNCOMMENT 182-183 & COMMENT OUT 172 & 185
+    var dataToDisplay = localStorage.getItem(city)
+    $('#cityHistory').html(`<h2>Reccently Viewed:</h2>${dataToDisplay}`)
+    
+    //sendCityInfo(city)
+
+}
+
 
 // function getCityData(){
-// $('#cities').each(function(){
+// $('#cities1').each(function(){
 //     $(this).val(localStorage.getItem($('#currentDisplay')))
 // })
 // }
