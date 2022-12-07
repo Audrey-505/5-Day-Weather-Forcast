@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <h1>Weather-Reports</h1>
+    <h1 id="title">Weather-Reports</h1>
 
     <!-- <h1 id="datetest"></h1> -->
 
@@ -30,7 +30,7 @@
     <div class="form-group" id="cityData">
         <label for="cities">Cities</label>
         <!-- <select class="form-control" id="cities1" onchange="clearAll()"> -->
-        <select class="form-control" id="cities1" onchange="clearAll()">
+        <select class="form-control dropDown" id="cities1" onchange="clearAll()">
           <option selected="selected">Select A City</option>  
           <option>Atlanta</option>
           <option>Chicago</option>
@@ -40,7 +40,7 @@
           <option>New York</option>
         </select>
       </div>
-      <button id="goWeather" onclick="resetBtn()">Get Weather</button>
+      <!-- <button id="goWeather" onclick="resetBtn()">Get Weather</button> -->
 
     <div id="currentDisplay">
         <!-- <table class="table">
@@ -61,14 +61,14 @@
                 </tr>
             </tbody>
         </table> -->
-    </div>
     <div id="five-dayDisplay">
 
     </div>
+  </div>
 
     <div id="cityReturn">
 
-    </div>
+      </div>
 
     <script
       type="text/javascript"

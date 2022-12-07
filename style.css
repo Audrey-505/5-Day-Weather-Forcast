@@ -12,12 +12,25 @@ div {
     border: 2px;
 }
 
+a {
+    color: #0002A1;
+}
+
 .btnAway {
     display: none;
 }
 
 .btnCome {
     display: auto;
+}
+
+#title {
+    text-align: center;
+}
+
+.dropDown {
+    text-align: center;
+    width: 50%;
 }
 
 #reccentS {

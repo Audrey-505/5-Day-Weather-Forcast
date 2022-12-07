@@ -95,7 +95,7 @@ $(currentWDisplay).append(`
 }
 
 function futureWeather(data){
-$(futureWeatherD).append(`
+$(currentWDisplay).append(`
 <h2>5-Day Forcast</h2>
 <h3>City: ${data.city.name}</h3>
 <table class="table">
