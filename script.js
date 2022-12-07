@@ -58,7 +58,7 @@ var iconURL = `https://openweathermap.org/img/wn/`
 function currentWeather(data){
 $(currentWDisplay).append(`
 <h2>Current Weather</h2>
-<h3>City: ${data.city.name} Date: ${moment.unix(`${data.list[0].dt}`).format("dddd, MMMM Do YYYY")} </h3>
+<h3>City: ${data.city.name} Date: ${moment.unix(`${data.list[0].dt}`).format("dddd, DD/YY")} </h3>
 <table class="table">
             <thead>
                 <tr>
@@ -71,7 +71,7 @@ $(currentWDisplay).append(`
             <tbody>
                 <tr>
                     <th scope="row"><img src="${iconURL}${data.list[0].weather[0].icon}.png"></th>
-                    <th scope="row">${data.list[0].main.feels_like}</th>
+                    <th scope="row">${data.list[0].main.feels_like}&#176;</th>
                     <th scope="row">${data.list[0].wind.speed}mph</th>
                     <th scope="row">${data.list[0].main.humidity}%</th>
                 </tr>
@@ -88,11 +88,11 @@ $(currentWDisplay).append(`
   <thead>
     <tr>
       <th scope="col">Date</th>
-      <th scope="col">${moment.unix(`${data.list[0].dt}`).format("dddd, MMMM Do YYYY")}</th>
-      <th scope="col">${moment.unix(`${data.list[8].dt}`).format("dddd, MMMM Do YYYY")}</th>
-      <th scope="col">${moment.unix(`${data.list[16].dt}`).format("dddd, MMMM Do YYYY")}</th>
-      <th scope="col">${moment.unix(`${data.list[24].dt}`).format("dddd, MMMM Do YYYY")}</th>
-      <th scope="col">${moment.unix(`${data.list[32].dt}`).format("dddd, MMMM Do YYYY")}</th>
+      <th scope="col">${moment.unix(`${data.list[0].dt}`).format("ddd <br> DD/YY")}</th>
+      <th scope="col">${moment.unix(`${data.list[8].dt}`).format("ddd <br> DD/YY")}</th>
+      <th scope="col">${moment.unix(`${data.list[16].dt}`).format("ddd <br> DD/YY")}</th>
+      <th scope="col">${moment.unix(`${data.list[24].dt}`).format("ddd <br> DD/YY")}</th>
+      <th scope="col">${moment.unix(`${data.list[32].dt}`).format("ddd <br> DD/YY")}</th>
     </tr>
   </thead>
   <tbody>
@@ -106,11 +106,11 @@ $(currentWDisplay).append(`
   </tr>
   <tr>
     <th scope="row">Temp</th>
-    <td>${data.list[0].main.feels_like}</td>
-    <td>${data.list[8].main.feels_like}</td>
-    <td>${data.list[16].main.feels_like}</td>
-    <td>${data.list[24].main.feels_like}</td>
-    <td>${data.list[32].main.feels_like}</td>
+    <td>${data.list[0].main.feels_like}&#176;</td>
+    <td>${data.list[8].main.feels_like}&#176;</td>
+    <td>${data.list[16].main.feels_like}&#176;</td>
+    <td>${data.list[24].main.feels_like}&#176;</td>
+    <td>${data.list[32].main.feels_like}&#176;</td>
   </tr>
   <tr>
     <th>Wind</th>
