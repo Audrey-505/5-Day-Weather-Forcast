@@ -59,25 +59,16 @@ function currentWeather(data){
 $(currentWDisplay).append(`
 <h2>Current Weather</h2>
 <h3>City: ${data.city.name} Date: ${moment.unix(`${data.list[0].dt}`).format("dddd, DD/YY")} </h3>
-<table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">Weather</th>
-                    <th scope="row">Tempreture</th>
-                    <th scope="row">Wind Speed</th>
-                    <th scope="row">Humidity</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row"><img src="${iconURL}${data.list[0].weather[0].icon}.png"></th>
-                    <th scope="row">${data.list[0].main.feels_like}&#176;</th>
-                    <th scope="row">${data.list[0].wind.speed}mph</th>
-                    <th scope="row">${data.list[0].main.humidity}%</th>
-                </tr>
-            </tbody>
-        </table>
-`)   
+        <div id="currentWHolder" class="container border border-dark w-25"> 
+        <div id="bigW" class="row border border-dark">
+        <div class="col-2"><h2><img src="${iconURL}${data.list[0].weather[0].icon}.png"></h2></div>
+        <div class="col-10 text-center"><h2>${data.list[0].main.feels_like}&#176;</h2></div>
+        </div>
+        <div id="littleW" class="text-center">
+        <p>Wind ${data.list[0].wind.speed}mph<p>
+        <p>Humidity ${data.list[0].main.humidity}%<p>
+        </div>
+        </div>`)   
 }
 
 function futureWeather(data){
@@ -161,3 +152,23 @@ function sendCityInfo(city){
     $('#cityReturn').html(`<h2 id="reccentS">Reccently Viewed:</h2>${dataToDisplay}`)
     }
 
+
+// //CURRENT WEATHER DATA TABLE
+// <table class="table">
+//             <thead>
+//                 <tr>
+//                     <th scope="col">Weather</th>
+//                     <th scope="row">Tempreture</th>
+//                     <th scope="row">Wind Speed</th>
+//                     <th scope="row">Humidity</th>
+//                 </tr>
+//             </thead>
+//             <tbody>
+//                 <tr>
+//                     <th scope="row"><img src="${iconURL}${data.list[0].weather[0].icon}.png"></th>
+//                     <th scope="row">${data.list[0].main.feels_like}&#176;</th>
+//                     <th scope="row">${data.list[0].wind.speed}mph</th>
+//                     <th scope="row">${data.list[0].main.humidity}%</th>
+//                 </tr>
+//             </tbody>
+//         </table>

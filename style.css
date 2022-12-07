@@ -13,6 +13,10 @@ a {
     color: #0002A1;
 }
 
+img {
+    width: 100px;
+}
+
 .btnAway {
     display: none;
 }
@@ -32,4 +36,8 @@ a {
 
 #reccentS {
     color: #0002A1;
+}
+
+#bigTemp {
+    font-size: 6em;
 }
