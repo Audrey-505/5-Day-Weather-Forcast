@@ -169,7 +169,7 @@ function testingStore(){
 
 
 function getCityData(){
-    //$('#cityHistory').html(`<h3>Reccent Searches:</h3><br><h4><a href="saved-city.html">${city}</a></h4><br>`)
+    $('#cityHistory').html(`<h3 id="reccentS">Reccent Searches:</h3><br><h4><a href="#cityReturn">${city}</a></h4><br>`)
     //localStorage.getItem(city)
     //$('#cityHistory').html('<h1>HELLO WORLD<h1>')
     //$('#cityHistory').append(getCityData(city))
@@ -179,13 +179,17 @@ function getCityData(){
     //$('#cityHistory').html(cityInformation)
 
     // UNCOMMENT 182-183 & COMMENT OUT 172 & 185
-    var dataToDisplay = localStorage.getItem(city)
-    $('#cityHistory').html(`<h2>Reccently Viewed:</h2>${dataToDisplay}`)
+   //var dataToDisplay = localStorage.getItem(city)
+    //$('#cityHistory').html(`<h2>Reccently Viewed:</h2>${dataToDisplay}`)
     
-    //sendCityInfo(city)
+    sendCityInfo(city)
 
 }
 
+function sendCityInfo(city){
+    var dataToDisplay = localStorage.getItem(city)
+    $('#cityReturn').html(`<h2 id="reccentS">Reccently Viewed:</h2>${dataToDisplay}`)
+    }
 
 // function getCityData(){
 // $('#cities1').each(function(){

@@ -1,5 +1,11 @@
+body {
+    background-color: #607EAA;
+    color: #FFFFFF;
+    font-family: 'Sree Krushnadevaraya', serif;;
+}
+
 h1 {
-    color: red;
+    color: #FFFFFF;
 }
 
 div {
@@ -12,4 +18,8 @@ div {
 
 .btnCome {
     display: auto;
+}
+
+#reccentS {
+    color: #0002A1;
 }
