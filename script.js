@@ -1,22 +1,8 @@
-
-
 var currentWDisplay = document.getElementById('currentDisplay')
 var futureWeatherD = document.getElementById('five-dayDisplay')
 
 var APIKey = 'd8b4e9c1ebd7b4bfdc1c3e9a6c0207cf'
-// var city 
 var city;
-// var date = $('#datetest')
-// var todayDate = moment.unix(1670176800).format("dddd, MMMM Do YYYY")
-// $(date).append(`<h1>${todayDate}</h1>`)
-// console.log(todayDate)
-
-
-// function getCityData(){
-// $('#cities').each(function(){
-//     $(this).val(localStorage.getItem($('#currentDisplay')))
-// })
-// }
 
 function resetBtn(){
     if ($('#currentDisplay').children().length === 0){
@@ -162,25 +148,9 @@ function testingStore(){
     })
 }
 
-// $('#cityHistory').append(getCityData())
-// function cityInformation(){
-//     localStorage.getItem(city)
-// }
-
 
 function getCityData(){
     $('#cityHistory').html(`<h3 id="reccentS">Reccent Searches:</h3><br><h4><a href="#cityReturn">${city}</a></h4><br>`)
-    //localStorage.getItem(city)
-    //$('#cityHistory').html('<h1>HELLO WORLD<h1>')
-    //$('#cityHistory').append(getCityData(city))
-    //$('#cityHistory').html() = localStorage.getItem(city)
-    //$('#cityHistory').html(localStorage.getItem(city)) CORRECT SYNTAX BUT NOT WORKING
-    //console.log(localStorage.getItem(city))
-    //$('#cityHistory').html(cityInformation)
-
-    // UNCOMMENT 182-183 & COMMENT OUT 172 & 185
-   //var dataToDisplay = localStorage.getItem(city)
-    //$('#cityHistory').html(`<h2>Reccently Viewed:</h2>${dataToDisplay}`)
     
     sendCityInfo(city)
 
@@ -191,57 +161,3 @@ function sendCityInfo(city){
     $('#cityReturn').html(`<h2 id="reccentS">Reccently Viewed:</h2>${dataToDisplay}`)
     }
 
-// function getCityData(){
-// $('#cities1').each(function(){
-//     $(this).val(localStorage.getItem($('#currentDisplay')))
-// })
-// }
-
-
-//this is my test test
-//var queryURL = `api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${APIKey}`
-//console.log(queryURL)
-
-/* 
-function citySelected(){
-    city = document.getElementById('cities1').value
-    console.log(city)
-fetch("http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey)
-.then(response => {
-            \\ need logic to push search results, save to local storage, eventually append to a list of searched cities
-            return response.json()
-        })
- .then(response => {
-            console.log(response);
-*/
-
-// function citySelected(){
-//     city = document.getElementById('cities1').value
-//     console.log(city)
-//     //return city
-//     var cityURL = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKey}`
-//     //console.log(cityURL)
-//     fetch(cityURL)
-//     .then(function (response){
-//         return response.json()
-//     })
-//     .then(function (response){
-//         console.log(response.coord)
-//         var lat = response.coord.lat  // this code grabs the coordinates of the city to use in the 5 day forcast api url 
-//         //console.log(lat)
-//         var lon = response.coord.lon
-//         //console.log(lon)
-//         //return (lat, lon)
-//         var queryURL = `api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${APIKey}`
-//         //console.log(queryURL)
-//         fetch(queryURL, {
-//             mode: 'cors'
-//         })
-//         .then(function (data){
-//         console.log(data.json())
-//         })
-//         // .then(function (data){
-//         //     console.log(data)
-//         // })
-//     })
-// }
