@@ -22,7 +22,7 @@ function clearAll (){
 
 function getCoords(city) {
     city = document.getElementById('cities1').value
-    var cityURL = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKey}`
+    var cityURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKey}`
     fetch(cityURL)
         .then(function (response) {
             return response.json()
@@ -40,7 +40,7 @@ function getCoords(city) {
 } 
 
  function getWeather(a, b){
-    var queryURL = `http://api.openweathermap.org/data/2.5/forecast?lat=${a}&lon=${b}&appid=${APIKey}&units=imperial`
+    var queryURL = `https://api.openweathermap.org/data/2.5/forecast?lat=${a}&lon=${b}&appid=${APIKey}&units=imperial`
     fetch(queryURL)
     .then(function (response){
     console.log(response)
