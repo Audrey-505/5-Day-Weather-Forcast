@@ -58,14 +58,14 @@ var iconURL = `https://openweathermap.org/img/wn/`
 function currentWeather(data){
 $(currentWDisplay).append(`
 <h2>Current Weather</h2>
-<h3>City: ${data.city.name} Date: ${moment.unix(`${data.list[0].dt}`).format("dddd, DD/YY")} </h3>
+<h3>City: ${data.city.name} Date: ${moment.unix(`${data.list[0].dt}`).format("dddd, DD/MM")} </h3>
         <div id="currentWHolder" class="container border border-dark w-25"> 
         <div id="bigW" class="row border border-dark">
         <div class="col-2"><h2><img src="${iconURL}${data.list[0].weather[0].icon}.png"></h2></div>
         <div class="col-10 text-center"><h2>${data.list[0].main.feels_like}&#176;</h2></div>
         </div>
         <div id="littleW" class="text-center">
-        <p>Wind ${data.list[0].wind.speed}mph<p>
+        <p>Wind ${data.list[0].wind.speed} mph<p>
         <p>Humidity ${data.list[0].main.humidity}%<p>
         </div>
         </div>`)   
@@ -79,11 +79,11 @@ $(currentWDisplay).append(`
   <thead>
     <tr>
       <th scope="col">Date</th>
-      <th scope="col">${moment.unix(`${data.list[0].dt}`).format("ddd <br> DD/YY")}</th>
-      <th scope="col">${moment.unix(`${data.list[8].dt}`).format("ddd <br> DD/YY")}</th>
-      <th scope="col">${moment.unix(`${data.list[16].dt}`).format("ddd <br> DD/YY")}</th>
-      <th scope="col">${moment.unix(`${data.list[24].dt}`).format("ddd <br> DD/YY")}</th>
-      <th scope="col">${moment.unix(`${data.list[32].dt}`).format("ddd <br> DD/YY")}</th>
+      <th scope="col">${moment.unix(`${data.list[0].dt}`).format("ddd <br> DD/MM")}</th>
+      <th scope="col">${moment.unix(`${data.list[8].dt}`).format("ddd <br> DD/MM")}</th>
+      <th scope="col">${moment.unix(`${data.list[16].dt}`).format("ddd <br> DD/MM")}</th>
+      <th scope="col">${moment.unix(`${data.list[24].dt}`).format("ddd <br> DD/MM")}</th>
+      <th scope="col">${moment.unix(`${data.list[32].dt}`).format("ddd <br> DD/MM")}</th>
     </tr>
   </thead>
   <tbody>
