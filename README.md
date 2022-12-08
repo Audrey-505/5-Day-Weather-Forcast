@@ -24,7 +24,8 @@ N/A
 
 ## Screenshots 
 
-<img width="1280" alt="Screen Shot 2022-12-08 at 11 06 36 AM" src="https://user-images.githubusercontent.com/77470771/206499984-6f4b4b0e-b7b1-48b8-aab7-1d483cac66ba.png">
+<img width="1275" alt="Screen Shot 2022-12-08 at 11 06 36 AM" src="https://user-images.githubusercontent.com/77470771/206512618-47734120-d573-4dc4-b49a-892103d05747.png">
+
 
 ## Link
 
